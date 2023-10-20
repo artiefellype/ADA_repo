@@ -1,0 +1,160 @@
+:root {
+    --background-color: #FFF5E0;
+    --mid-color: #FF6969;
+    --secondary-color: #C70039;
+    --primary-color: #141E46;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--background-color);
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    height: 96px;
+    padding: 20px;
+    background-color: var(--mid-color);
+    color: var(--background-color);
+}
+
+header div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul{
+    gap: 15px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.link-format li a{
+    color: var(--background-color);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.link-format li a:hover{
+    transition: 0.3s;
+    color: var(--primary-color);
+}
+
+
+/* MAIN */
+
+
+main{
+    height: calc(100vh - 192px);
+    width: 100%;
+    display: table;
+}
+
+main aside{
+    display: table-cell;
+    vertical-align: top;
+    width: 15%;
+    padding: 20px;
+    background-color: aqua;
+}
+
+main section{
+    display: table-cell;
+    vertical-align: top;
+    width: 75%;
+    
+}
+
+.general-image {
+    width: 16rem;
+    height: 20rem;
+}
+
+
+.title {
+    padding-bottom: 40px;
+    font-size: 36px;
+    width: 460px;
+    color: var(--background-color);
+}
+
+.description {
+    font-size: 18px;
+    width: 720px;
+    color: var(--background-color);
+    padding-bottom: 30px;
+}
+
+.home-section {
+    width: 100%;
+    padding: 20px;
+    background-color: #FF6969;
+}
+
+.table-main {
+    display: table;
+    width: 100%;
+}
+
+.table-cell-left {
+    display: table-cell;
+    width: 60%;
+    vertical-align: middle;
+}
+
+.table-cell-right {
+    display: table-cell;
+    width: 40%;
+    vertical-align: middle;
+}
+
+.generic-button {
+    border: none;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-weight: 900;
+    font-style: normal;
+    text-align: center;
+    width: 200px;
+    height: 36px;
+    transition: 0.3s;
+    animation: ease-in-out;
+}
+
+.generic-button:hover {
+    cursor: pointer;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    
+}
+
+
+/* END MAIN */
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    height: 96px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+/* END FOOTER */
