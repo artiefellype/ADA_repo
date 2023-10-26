@@ -24,6 +24,36 @@ a {
   color: var(--light-color);
 }
 
+h1 {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 36px;
+}
+
+h2 {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 24px;
+}
+
+h3 {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 16px;
+}
+
+.separator {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+  background-color: var(--dark-color);
+  width: 60%;
+  height: 2px;
+}
+
 /* HEADER */
 
 header {
@@ -177,7 +207,7 @@ main {
     justify-content: flex-start;
     align-items: center;
     padding-top: 20rem;
-    height: 100vh;
+    min-height: 100vh;
     opacity: 1;
 }
 
@@ -185,11 +215,6 @@ main {
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-.home-title h2{
-    font-weight: 700;
-    color: var(--dark-color);
 }
 
 .home-desc {
@@ -208,9 +233,16 @@ main {
 
 /* CATALOG */
 .catalog-section {
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--light-color);
     opacity: 1;
+}
+
+.catalog-header {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: left;
+  padding-left: 0.5rem;
 }
 
 .card-carousel-container {
@@ -261,7 +293,7 @@ main {
 }
 
 .card-item h3 {
-    font-weight: 500;
+    font-weight: 700;
     color: #1a1a1a;
     text-align: left;
     font-size: 16px;
@@ -269,19 +301,145 @@ main {
 
 .card-item-desc-container {
     width: 100%;
-    height: 100px;
     margin-bottom: 15px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 5;
+    box-sizing: border-box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 .card-item p {
-    font-weight: 300;
+    font-weight: 500;
     font-style: oblique;
     font-size: 12px;
     color: #1a1a1a;
-    text-align: justify;
+    text-align: left;
 }
 
 /* END CATALOG */
+
+
+/* RESTAURANTS*/
+
+.restaurants-section {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.restaurants-header {
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  padding-left: 0.5rem;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border-right: 1px solid var(--light-color) ;
+  text-align: center;
+}
+
+th:nth-child(1) {
+  width: 40%; 
+}
+
+th:nth-child(2) {
+  width: 10%; 
+}
+
+th:nth-child(3) {
+  width: 50%; 
+}
+
+
+.description-checkbox {
+  display: none;
+}
+
+.description-content {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.3s;
+}
+
+.description-checkbox:checked + .show-description-label + .description-content {
+  height: 200px; /* Ajuste a altura máxima conforme necessário */
+  padding: 10px;
+  display: block;
+}
+/* END RESTAURANTS*/
+
+/* FORM */
+
+.contact-section {
+  width: 100%;
+  height: 100vh;
+}
+
+.contact-header{
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding-left: 0.5rem;
+  text-align: left;
+}
+
+.form-container {
+  width: 100%;
+  padding: 1rem;
+}
+
+.form-container form {
+  text-align: left;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.form-container button {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  font-weight: 700;
+  border: 1px solid var(--light-color);
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #f5f5f5;
+  color: var(--dark-color);
+  border: 1px solid var(--dark-color);
+}
+
+/* END FORM */
 
 /* END MAIN*/
 
