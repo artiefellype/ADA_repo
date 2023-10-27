@@ -1,6 +1,7 @@
 # iFood Gourmet Landing Page
 
 Bem-vindo ao repositório da iFood Gourmet landing page. Essa página faz parte do projeto final do modulo de front end estático da ADA Tech front end. 
+Site (github pages): https://artiefellype.github.io/ADA_repo/projeto_final/index.html
 
 ## Visão Geral
 
