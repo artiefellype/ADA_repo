@@ -3,6 +3,7 @@
 :root {
   --primary-color: #ea1d2c;
   --dark-color: #333333;
+  --grey-color: #C5C5C5;
   --light-color: #f5f5f5;
 }
 
@@ -42,6 +43,23 @@ h3 {
   font-size: 16px;
 }
 
+@media screen and (min-width: 720px) {
+  h1 {
+    
+    font-size: 56px;
+  }
+  
+  h2 {
+    
+    font-size: 44px;
+  }
+  
+  h3 {
+    
+    font-size: 26px;
+  }
+}
+
 .separator {
   width: 100%;
   display: flex;
@@ -66,15 +84,16 @@ header {
   padding: 35px;
   position: fixed;
   z-index: 10;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-header .logo-container {
+ .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-header .logo-container img {
+ .logo-container img {
   background-position: center;
   background-size: contain;
   width: 90px;
@@ -202,6 +221,10 @@ main {
 
 .home-section {
     background-color: transparent;
+    background-image: url("assets/background-mobile.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -229,6 +252,17 @@ main {
     text-align: center;
 }
 
+/* DESK HOME*/
+@media screen and (min-width: 720px) {
+  .home-section {
+    background-image: url("assets/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+}
+/*END DESK HOME*/
+
 /* END HOME*/
 
 /* CATALOG */
@@ -236,6 +270,10 @@ main {
     min-height: 100vh;
     background-color: var(--light-color);
     opacity: 1;
+    background-image: url("assets/catalog-background.webp");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .catalog-header {
@@ -260,6 +298,7 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
+    
 }
 
 .card-img {
@@ -271,6 +310,12 @@ main {
     justify-content: center;
     align-items: center;
     padding-top: 15px;
+}
+
+.card-img img {
+  max-width: 270px;
+  max-height: 200px;
+  
 }
 
 .card-item {
@@ -290,6 +335,7 @@ main {
     padding-right: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .card-item h3 {
@@ -318,7 +364,42 @@ main {
     text-align: left;
 }
 
+/* DESK CATALOG*/
+
+.catalog-desk {
+  display: none;
+}
+
+@media screen and (min-width: 720px) {
+
+  .catalog-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: bottom;
+  }
+  .catalog-desk {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 6px;
+  }
+
+  .catalog-header {
+    padding-top: 6rem;
+    text-align: center;
+    padding-left: 0rem;
+  }
+
+}
+/* END DESK CATALOG*/
+
 /* END CATALOG */
+
 
 
 /* RESTAURANTS*/
@@ -377,10 +458,66 @@ th:nth-child(3) {
 }
 
 .description-checkbox:checked + .show-description-label + .description-content {
-  height: 200px; /* Ajuste a altura máxima conforme necessário */
+  height: 200px;
   padding: 10px;
   display: block;
 }
+
+
+/*DESK RESTAURANTS */
+@media screen and (min-width: 720px) {
+
+  .restaurants-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .restaurants-header {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    text-align: center;
+    padding-left: 0rem;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 960px;
+  }
+  
+  th:nth-child(1) {
+    border-top-left-radius: 10px;
+    
+  }
+  
+  th:nth-child(3) {
+    border-top-right-radius: 10px;
+  }
+
+  td:nth-child(2) {
+    text-align: center;
+    
+  }
+
+  td:nth-child(3) {
+    text-align: center;
+  }
+
+  td:nth-child(3) label{
+    color: var(--dark-color);
+    cursor: pointer;
+  }
+
+  td:nth-child(3) label:hover{
+    color: var(--primary-color);
+  }
+}
+/*END DESK RESTAURANTS */
+
 /* END RESTAURANTS*/
 
 /* FORM */
@@ -427,19 +564,87 @@ th:nth-child(3) {
   color: var(--light-color);
   font-weight: 700;
   border: 1px solid var(--light-color);
+  border-radius: 5px;
   padding: 10px 20px;
   margin-top: 20px;
-  border-radius: 3px;
   cursor: pointer;
+  transition: ease-in-out 0.2s;
 }
 
 .form-container button:hover {
-  background-color: #f5f5f5;
+  background-color: var(--grey-color);
   color: var(--dark-color);
-  border: 1px solid var(--dark-color);
+  border: 1px solid var(--grey-color);
 }
+
+/*DESK FORM*/
+
+@media screen and (min-width: 720px) {
+  .contact-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact-header{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    padding-left: 0rem;
+    text-align: center;
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+  }
+}
+/*END DESK FORM*/
 
 /* END FORM */
 
 /* END MAIN*/
+
+/*FOOTER*/
+footer {
+  width: 100%;
+  padding: 20px;
+  min-height: 110px;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.suport-container {
+  padding: 45px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 5px;
+}
+
+/*DESK FOOTER*/
+
+@media screen and (min-width:720px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .suport-container {
+    padding: 10px 20px;
+    padding-top: 30px;
+    align-items: flex-start;
+  }
+}
+/*END DESK FOOTER*/
+/*END FOOTER*/
 
